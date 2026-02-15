@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admission Form</title>
+</head>
+<body>
+    <center>
+        <h2>Admission Form</h2>
+    </center>
+
+    <form>
+        <fieldset>
+            <h3>Personal Information</h3>
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" required maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" required maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" required></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td><input type="date" required></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" name="gender" value="Male" > Male
+                        <input type="radio" name="gender" value="Female"> Female
+                        <input type="radio" name="gender" value="Other"> Other
+                    </td>
+                </tr>
+                <td>Interests:</td>
+                    <td>
+                        <input type="checkbox" name="interests" value="Sports"> Sports
+                        <input type="checkbox" name="interests" value="Coding"> Coding
+                        <input type="checkbox" name="interests" value="Reading"> Reading
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <h3>Academic Information</h3>
+            <table>
+                <tr>
+                    <td>Previous School:</td>
+                    <td><input type="text" required maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td>Preferred Department:</td>
+                    <td>
+                        <select required>
+                            <option value="">  Select a department  </option>
+                            <option value="cse">CSE</option>
+                            <option value="bba">BBA</option>
+                            <option value="eee">Economics</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload Transcript:</td>
+                    <td><input type="file" required></td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+
+        <center>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </center>
+    </form>
+<body>
+                
+</html>
