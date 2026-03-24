@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Text Analyzer</title>
+    <style>
+      body {
+        background-color: #f0f4f8;
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #003366;
+      }
+
+      label {
+        font-weight: bold;
+        color: #003366;
+      }
+
+      textarea {
+        border: 1px solid #aab;
+        padding: 8px;
+        background-color: #ffffff;
+      }
+
+      button {
+        background-color: #003366;
+        color: white;
+        padding: 8px 18px;
+        border: none;
+        cursor: pointer;
+        margin-right: 8px;
+      }
+
+      button:hover {
+        background-color: #0055aa;
+      }
+
+      #results {
+        background-color: #ffffff;
+        border: 4px solid #003366;
+        border-radius: 20px;
+        padding: 15px 20px;
+        margin-top: 10px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      #results h2 {
+        color: #003366;
+        margin-top: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1>Text Analyzer</h1>
+    </center>
+
+    <br /><br />
+    <textarea
+      id="inputText"
+      rows="10"
+      cols="100"
+      placeholder="Paste or type your paragraph here"
+    ></textarea>
+    <br /><br />
+
+    <button onclick="analyzeText()">Analyze Text</button>
+    <button onclick="clearAll()">Clear</button>
+
+    <br /><br />
+
+    <div id="results"></div>
+
+    <script>
+      function analyzeText() {
+        var text = document.getElementById("inputText").value;
+        var resultsDiv = document.getElementById("results");
+
+        if (text.trim() === "") {
+          resultsDiv.innerHTML = "<p>enter text before analyzing.</p>";
+          return;
+        }
+
+        var totalChars = text.length;
+
+        var words = text.trim().split(/\s+/);
+        var totalWords = words.length;
+
+        var reversedText = text.split("").reverse().join("");
+
+        resultsDiv.innerHTML =
+          "<h2>Results</h2>" +
+          "<span><b>Total Characters:</b> " +
+          totalChars +
+          "       </span>" +
+          "<span><b>Total Words:</b> " +
+          totalWords +
+          "</span>" +
+          "<p><b>Reversed Text:</b></p>" +
+          "<p>" +
+          reversedText +
+          "</p>";
+      }
+
+      function clearAll() {
+        document.getElementById("inputText").value = "";
+        document.getElementById("results").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
